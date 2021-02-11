@@ -9,19 +9,48 @@
             <p class="hidden md:block mt-2 ml-3 font-medium text-gray-700 md:mt-0">
               <span class="hidden lg:inline">魔法公會薪資系統  Magic Guild Payroll System</span>
             </p>
+            <p>
+              <a href="" class="hidden lg:inline font-medium text-gray-500 hover:text-gray-900 ml-4">
+              關於系統
+              </a>
+            </p>
+             <p>
+              <a href="" class="hidden lg:inline font-medium text-gray-500 hover:text-gray-900 ml-4">
+              關於作者
+              </a>
+            </p>
+            <p>
+              <a href="" class=" hidden lg:inline font-medium text-gray-500 hover:text-gray-900 ml-4">
+              常見問題
+              </a>
+            </p>
           </div>
-         <% if current_user %>
-            <div class="flex text-sm">
-            <a href="" class="font-medium text-gray-500 hover:text-gray-900">
-             <%= link_to '登出', destroy_user_session_path, method: :delete%>
-            </a>
-        <% else%>
-            <a href="" class="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
-              <%= link_to '登入', user_session_path%>
-            </a>
-          </div>
-            </div>
-        <% end %>
+            <% if user_signed_in? %>
+              <li class="nav-item p-2">
+                <%= link_to edit_user_registration_path, class: 'nav-link  text-light' do %>
+                  <span>
+                    <i class="fas fa-user-edit"></i>
+                    <%= t('my_page') %>
+                  </span>
+                <% end %>
+              </li>
+
+              <li class="nav-item p-2">
+                <%= link_to destroy_user_session_path, class: 'nav-link', method: 'delete' do %>
+                  <span>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <%= t('log_out') %>     
+                  </span>
+                <% end %>
+              </li>
+              <li class="nav-item p-2">
+                <%= fa_icon "bell"%>
+                <span id="timecount">
+                  <span id='logout-timestamp' data-logout-time="<%= current_user.current_sign_in_at + 30.minutes %>"></span>
+                </span>
+              </li>
+            <% end %>
+        </div>
     </header>
  
        
