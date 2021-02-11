@@ -1,26 +1,41 @@
-<h2>Log in</h2>
+  <%= render 'shared/navbar'%>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<!-- component -->
+<div class=" py-2 bg-gray-900">
+  <div class="max-w-8xl mx-auto py-24 px-4 sm:px-6 lg:px-8 w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray-900">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="content text-3xl text-center md:text-left">
+      <h1 class="text-5xl text-yellow-400 font-bold">新手村學徒</h1>
+      <p class="text-gray-500">恭喜你降生在這世界上，我們即將幫助你踏上未知的旅程。</p>
     </div>
-  <% end %>
+    <div class="container mx-auto flex flex-col items-center">
+      <form class="shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg">
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"focus:outline-none" %>
+            </div>
+
+            <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
+              <%=f.password_field :password, autocomplete: "current-password" ,placeholder:"current-password", class:"focus:outline-none" %>
+            </div>
+
+            <%= f.submit "登入", class:"actions w-full bg-yellow-400  text-indigo-900 p-3 rounded-lg font-semibold text-lg" %>
+            
+            <a class="text-indigo-900 text-center my-2">Forgot Pasword?</a>
+            <hr />
+
+            <button class="w-full bg-green-700 mt-8 mb-4 text-white p-3 rounded-lg font-semibold text-lg">
+            <%= link_to "註冊", new_registration_path(resource_name)%></button>
+        <% end %>
+      </form>
+    </div>
+
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+ <%= render 'shared/footer'%>
+
+ 
+

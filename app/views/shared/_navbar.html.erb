@@ -1,0 +1,27 @@
+ <header class="relative z-10 border-b border-gray-200 bg-white">
+        <div class="flex items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+          <div class="md:flex items-center">
+            <a href="/components" class="block">
+ 
+            <a href="https://imgur.com/GGQjaD7"><img class="h-10 w-auto" src="https://i.imgur.com/6Qjy0Ll.png"></a>
+            </a>
+
+            <p class="hidden md:block mt-2 ml-3 font-medium text-gray-700 md:mt-0">
+              <span class="hidden lg:inline">魔法公會薪資系統  Magic Guild Payroll System</span>
+            </p>
+          </div>
+         <% if current_user %>
+            <div class="flex text-sm">
+            <a href="" class="font-medium text-gray-500 hover:text-gray-900">
+             <%= link_to '登出', destroy_user_session_path, method: :delete%>
+            </a>
+        <% else%>
+            <a href="" class="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
+              <%= link_to '登入', user_session_path%>
+            </a>
+          </div>
+            </div>
+        <% end %>
+    </header>
+ 
+       
