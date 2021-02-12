@@ -1,6 +1,6 @@
 
   <main>
-    <div class="bg-gray-900 py-12">
+    <div class="bg-gray-900 py-14">
       <div class="max-w-8xl mx-auto py-16 sm:px-6 lg:px-8">
         
         <div class="px-20 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
@@ -16,11 +16,11 @@
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
                   <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email", class:"focus:outline-none" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"請輸入email", class:"focus:outline-none" %>
                   </div>
 
                   <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                    <%=f.password_field :password, autocomplete: "current-password" , class:"focus:outline-none" %>
+                    <%=f.password_field :password, autocomplete: "current-password" ,placeholder:"請輸入密碼", class:"focus:outline-none" %>
                   </div>
 
                   <div class="actions">
@@ -30,14 +30,14 @@
                   <div class=" text-center text-indigo-900 my-2 ">
                   <a>
                     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                    <%= link_to "忘記密碼?", new_password_path(resource_name) %><br />
                     <% end %>
                   </a>
                   </div>
-                  <hr />
-                
+                  
               <% end %>
-                  <button class="w-full bg-green-700 my-4 text-white p-3 rounded-lg font-semibold text-lg">
+              <hr>
+                  <button class="w-full bg-green-700 my-2 text-white p-3 rounded-lg font-semibold text-lg my-2 s">
                   <%= link_to "註冊", new_registration_path(resource_name)%></button>
             </div>
           </div>

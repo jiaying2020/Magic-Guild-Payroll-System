@@ -1,6 +1,4 @@
-
-
-  <main>
+ <main>
     <div class="bg-gray-900 py-14">
       <div class="max-w-8xl mx-auto py-12 sm:px-6 lg:px-8">
         
@@ -29,9 +27,9 @@
                     <%=f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"請再輸入六位數密碼", class:"focus:outline-none" %>
                   </div>
                   <%= f.submit "註冊", class:"actions w-full bg-green-700  text-white p-3 rounded-lg font-semibold text-lg" %>
+              
               <% end %>
          
-              <hr />
               <button class="w-full bg-yellow-400 my-4  p-3 rounded-lg font-semibold text-lg">
                   <%= link_to "已有帳號？登入請進", new_session_path(resource_name)%></button>
           </div>
