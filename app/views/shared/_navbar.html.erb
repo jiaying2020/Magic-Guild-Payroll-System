@@ -7,7 +7,7 @@
             </a>
 
             <p class="hidden md:block mt-2 ml-3 font-medium text-gray-700 md:mt-0">
-              <span class="hidden lg:inline">魔法公會薪資系統  Magic Guild Payroll System</span>
+              <span class="hidden lg:inline"><%= link_to '魔法公會薪資系統  Magic Guild Payroll System', root_path %></span>
             </p>
             <p>
               <a href="" class="hidden lg:inline font-medium text-gray-500 hover:text-gray-900 ml-4">
@@ -28,8 +28,7 @@
 
           <% if current_user %>
           <%= link_to '登出', destroy_user_session_path, method: :delete%>
-        <% else%>
-          <%= link_to '登入', user_session_path%>
+
         <% end %>
 
       

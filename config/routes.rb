@@ -6,9 +6,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
-  devise_scope :user do
-      root 'home#index'
-    end
+  root 'home#index'
+  # devise_scope :user do
+      
+  #   end
   
 
   resources :novice do

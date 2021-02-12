@@ -1,8 +1,7 @@
 
-<%= render 'shared/navbar'%>
 
   <main>
-    <div class="bg-gray-900 py-10">
+    <div class="bg-gray-900 py-20">
       <div class="max-w-8xl mx-auto py-16 sm:px-6 lg:px-8">
         
         <div class="px-20 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
@@ -12,7 +11,7 @@
             <h4 class="mt-2 text-gray-500 text-lg text-center font-display">你的降生是這世界上最美好的事。</br>別害怕。我們即將幫助你踏上未知的旅程。</h4>
           </div>  
           <div>   
-            <form class=" item-center mx-auto shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg">
+            <div class=" item-center mx-auto shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg">
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
@@ -32,41 +31,10 @@
                   <%= f.submit "註冊", class:"actions w-full bg-yellow-400  text-indigo-900 p-3 rounded-lg font-semibold text-lg" %>
 
               <% end %>
-            </form>
+            </div>
           </div>
 
         </div>  
       </div>
     </div>                 
   </main>
-
- <%= render 'shared/footer'%>
-
- 
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
