@@ -25,31 +25,14 @@
               </a>
             </p>
           </div>
-            <% if user_signed_in? %>
-              <li class="nav-item p-2">
-                <%= link_to edit_user_registration_path, class: 'nav-link  text-light' do %>
-                  <span>
-                    <i class="fas fa-user-edit"></i>
-                    <%= t('my_page') %>
-                  </span>
-                <% end %>
-              </li>
 
-              <li class="nav-item p-2">
-                <%= link_to destroy_user_session_path, class: 'nav-link', method: 'delete' do %>
-                  <span>
-                    <i class="fas fa-sign-out-alt"></i>
-                    <%= t('log_out') %>     
-                  </span>
-                <% end %>
-              </li>
-              <li class="nav-item p-2">
-                <%= fa_icon "bell"%>
-                <span id="timecount">
-                  <span id='logout-timestamp' data-logout-time="<%= current_user.current_sign_in_at + 30.minutes %>"></span>
-                </span>
-              </li>
-            <% end %>
+          <% if current_user %>
+          <%= link_to '登出', destroy_user_session_path, method: :delete%>
+        <% else%>
+          <%= link_to '登入', user_session_path%>
+        <% end %>
+
+      
         </div>
     </header>
  

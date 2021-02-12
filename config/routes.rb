@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
-  root to: 'home#index'
+  # root to: 'home#index'
   devise_for :users, controllers: { 
     sessions: 'users/sessions', 
     registrations: "users/registrations",
   }
 
+  devise_scope :user do
+      root 'home#index'
+    end
   
+
+  resources :novice do
+  end
   # namespace 'admin' do
   #   resources 'users'
   #   root 'users#index'
