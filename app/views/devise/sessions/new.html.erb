@@ -1,7 +1,6 @@
-  <%= render 'shared/navbar'%>
 
   <main>
-    <div class="bg-gray-900 py-10">
+    <div class="bg-gray-900 py-12">
       <div class="max-w-8xl mx-auto py-16 sm:px-6 lg:px-8">
         
         <div class="px-20 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
@@ -11,35 +10,39 @@
             <h4 class="mt-2 text-gray-500 text-lg text-center font-display">你的降生是這世界上最美好的事。</br>別害怕。我們即將幫助你踏上未知的旅程。</h4>
           </div>  
           <div>   
-            <form class=" item-center mx-auto shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg">
+    
+            <div class=" item-center mx-auto shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg">
 
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
                   <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"focus:outline-none" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email", class:"focus:outline-none" %>
                   </div>
 
                   <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                    <%=f.password_field :password, autocomplete: "current-password" ,placeholder:"current-password", class:"focus:outline-none" %>
+                    <%=f.password_field :password, autocomplete: "current-password" , class:"focus:outline-none" %>
                   </div>
 
-                  <%= f.submit "登入", class:"actions w-full bg-yellow-400  text-indigo-900 p-3 rounded-lg font-semibold text-lg" %>
+                  <div class="actions">
+                  <%= f.submit "登入", class:" w-full bg-yellow-400  text-indigo-900 p-3 rounded-lg font-semibold text-lg" %>
+                  </div>
                   
-                  <a class="text-indigo-900 text-center my-2">Forgot Pasword?</a>
+                  <div class=" text-center text-indigo-900 my-2 ">
+                  <a>
+                    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                    <% end %>
+                  </a>
+                  </div>
                   <hr />
-
-                  <button class="w-full bg-green-700 mt-8 mb-4 text-white p-3 rounded-lg font-semibold text-lg">
-                  <%= link_to "註冊", new_registration_path(resource_name)%></button>
+                
               <% end %>
-            </form>
+                  <button class="w-full bg-green-700 my-4 text-white p-3 rounded-lg font-semibold text-lg">
+                  <%= link_to "註冊", new_registration_path(resource_name)%></button>
+            </div>
           </div>
 
         </div>  
       </div>
     </div>                 
   </main>
-
- <%= render 'shared/footer'%>
-
- 
-
