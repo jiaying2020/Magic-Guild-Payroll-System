@@ -1,3 +1,114 @@
+
+<!-- component -->
+<div class=" flex items-center justify-center bg-gray-900">
+
+        <form id="form" class="bg-yellow-200  mt-6  shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <br>
+            <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center">編輯個人資料</h1>
+            <br>
+            <div class=" flex flex space-x-6 items-center justify-center">
+              <div class="mb-4 ">
+    
+                  <label class=" text-gray-700 text-sm font-bold " for="name">
+                      姓名
+                  </label>
+
+                  <input
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="name" id="name" type="text" placeholder="請填入真實姓名" required>
+              </div>
+              
+              <div class="mb-4">
+  
+                  <label class=" text-gray-700 text-sm font-bold mb-2 " for="name">
+                      編號
+                  </label>
+
+                  <input
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      name="tel" id="tel" type="tel" placeholder="系統內建" required>
+              </div>
+            </div>
+
+<!-- 密碼區 -->
+
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    密碼
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    確認密碼
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    原始密碼
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
+            </div>
+
+<!-- 日期區 -->
+<!-- 上傳圖片區（預留） -->
+
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Date">
+                    Fecha
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="date" id="date" type="date" placeholder="Ingresa tu Fecha de Nacimiento" required>
+            </div>
+
+            <div class="mb-4">
+
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    ¿Pregunta 01?
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message1" id="message1" type="text" placeholder="Escríbe tu respuesta Aquí..."required></textarea>
+            </div>
+
+            <div class="mb-4">
+
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    ¿Pregunta 02?
+                </label>
+                
+                <textarea class="bshadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message2" id="message2" type="text" placeholder="Escríbe tu respuesta Aquí..." required></textarea>
+            </div>
+
+            
+            <div class="flex items-center justify-between">
+                <button id="submit"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    <i class="fab fa-whatsapp"></i> Enviar a WhatsApp
+                </button>
+            </div>
+
+            <div class="mb-4">
+
+ 
+        </form>
+        
+    </div>
+    
+
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+</div>
+
 <h2><%= t('.title', resource: resource.model_name.human) %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -41,3 +152,5 @@
 <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
 <%= link_to t('devise.shared.links.back'), :back %>
+
+
