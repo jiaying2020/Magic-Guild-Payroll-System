@@ -1,37 +1,61 @@
 
  <main>
-    <div class="bg-gray-900 py-8">
-      <div class="max-w-8xl mx-auto py-4 sm:px-6 lg:px-8">
+    <div class="login py-8">
+      <div class="max-w-8xl mx-auto sm:px-6 lg:px-10 py-6">
         
-        <div class="px-10 lg:grid lg:grid-cols-1 lg:gap-12 lg:items-center">
+        <div class=" lg:grid lg:grid-cols-1 lg:gap-12 lg:items-center">
           <div>   
-            <div class=" flex item-center mx-auto shadow-lg w-600 p-4 flex flex-col bg-yellow-200 rounded-lg">
-            <h1 class=" text-gray-700 font-bold my-4  text-xl text-center">編輯個人資料</h1>
+            <div class=" flex item-center mx-auto shadow-lg px-10 flex flex-col bg-gray-600 bg-opacity-25 rounded-lg">
+            <h1 class=" text-white mt-4 text-xl text-center">編輯個人資料</h1>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
                 <%# email %>
 
-                <div class="flex grid grid-cols-1 gap-4 lg:grid-cols-2">
-                    <div class=" bg-white mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"focus:outline-none" %>
+                <div class="flex grid grid-cols-1 gap-4 lg:grid-cols-3 my-4">
+                    <div>
+                    <p class="mb-1 text-white ">姓名</p>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"w-full px-5 py-3 text-gray-500 bg-white bg-opacity-50  rounded focus:outline-none focus:bg-yellow-200" %>
                     </div>
-
-                  <%# 密碼 %>
-                    <div class=" bg-white mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                      <%=f.password_field :password, autocomplete: "new-password" ,placeholder:"請輸入六位數密碼", class:"focus:outline-none" %>
+                    <div>
+                    <p class="mb-1 text-white ">編號</p>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"w-full px-5 py-3 text-gray-500 bg-white bg-opacity-50  rounded focus:outline-none focus:bg-yellow-200" %>
                     </div>
-                </div>
-                <%# 確認密碼 %>
-                  <div class="mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
-                    <%=f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"請再輸入六位數密碼", class:"focus:outline-none" %>
+                     <div>
+                    <p class="mb-1 text-white ">權限</p>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email", class:"w-full px-5 py-3 text-gray-500 bg-white bg-opacity-50  rounded focus:outline-none focus:bg-yellow-200" %>
+                    </div>
                   </div>
-                  <%= f.submit "註冊", class:"actions w-full bg-green-700  text-white p-3 rounded-lg font-semibold text-lg" %>
-              
+
+                  <div class="flex grid grid-cols-1 gap-4 lg:grid-cols-2 my-4">
+                  <%# 密碼 %>
+                    <div>
+                      <p class="mb-1 text-white ">密碼</p>
+                        <%=f.password_field :password, autocomplete: "new-password" ,placeholder:"請輸入六位數密碼", class:"w-full px-5 py-3 text-gray-500 bg-white bg-opacity-50  rounded focus:outline-none focus:bg-yellow-200" %>
+                    </div>
+                    <%# 確認密碼 %>
+                      <div>
+                      <p class="mb-1 text-white ">密碼</p>
+                        <%=f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"請再輸入六位數密碼", class:"w-full px-5 py-3 text-gray-500 bg-white bg-opacity-50  rounded focus:outline-none focus:bg-yellow-200" %>
+                    </div>
+                    
+                      <div class=" bg-white mb-3 py-3 px-4 border border-gray-400  focus:outline-none rounded-md focus:ring-1 ring-cyan-500">
+                        <%=f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"請再輸入六位數密碼", class:"focus:outline-none" %>
+                      </div>
+                  </div>
+                  <div class="mt-4 flex justify-center mx-auto ">
+
+                        <div class="actions">
+                          <%= f.submit t('.update'), class:"w-20 border-red-500 bg-red-500 text-white rounded-md py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline" %>
+                        </div>
+                        <div>
+                          <button class=" w-20 border-red-500 bg-red-500 text-white rounded-md py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline"><%= link_to t('devise.shared.links.back'), :back %></button></div>
+                  
+                </div>
               <% end %>
+              
+             
          
-              <button class="w-full bg-yellow-400 my-4  p-3 rounded-lg font-semibold text-lg">
-                  <%= link_to "已有帳號？登入請進", new_session_path(resource_name)%></button>
           </div>
 
         </div>  
@@ -39,115 +63,14 @@
     </div>                 
   </main>
 
+<style>
+  .login{
+  background: url('https://i.imgur.com/6JMiEK4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <!-- component -->
-<div class=" items-center justify-center bg-gray-900">
-
-        <div class=" bg-yellow-200 mx-30 my-2  shadow-md rounded px-4  ">
-       
-            <h1 class=" text-gray-700 font-bold my-4  text-xl text-center">編輯個人資料</h1>
-          
-            <div class=" flex space-x-4 items-center justify-center">
-              <div class="mb-4 ">
-    
-                  <label class=" text-gray-700 text-sm font-bold " for="name">
-                      姓名
-                  </label>
-
-                  <input
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="name" id="name" type="text" placeholder="請填入真實姓名" required>
-              </div>
-              
-              <div class="mb-4">
-  
-                  <label class=" text-gray-700 text-sm font-bold mb-2 " for="name">
-                      編號
-                  </label>
-
-                  <input
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      name="tel" id="tel" type="tel" placeholder="系統內建" required>
-              </div>
-            </div>
-
-<!-- 密碼區 -->
-
-            
-            <div class="mb-4">
-                <label class="text-gray-700 text-sm font-bold mb-2" for="name">
-                    新密碼
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                    再次確認新密碼
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                    原始密碼
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
-            </div>
-
-<!-- 日期區 -->
-<!-- 上傳圖片區（預留） -->
-
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="Date">
-                    Fecha
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="date" id="date" type="date" placeholder="Ingresa tu Fecha de Nacimiento" required>
-            </div>
-
-            <div class="mb-4">
-
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                    ¿Pregunta 01?
-                </label>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message1" id="message1" type="text" placeholder="Escríbe tu respuesta Aquí..."required></textarea>
-            </div>
-
-            <div class="mb-4">
-
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                    ¿Pregunta 02?
-                </label>
-                
-                <textarea class="bshadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="message2" id="message2" type="text" placeholder="Escríbe tu respuesta Aquí..." required></textarea>
-            </div>
-
-            
-            <div class="flex items-center justify-between">
-                <button id="submit"
-                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit">
-                    <i class="fab fa-whatsapp"></i> Enviar a WhatsApp
-                </button>
-            </div>
-
-            <div class="mb-4">
-
- 
-        </div>
-        
-    </div>
-    
-
-    <script src="assets/js/helpers.js"></script>
-    <script src="assets/js/whatsapp.js"></script>
-</div>
 
 <h2><%= t('.title', resource: resource.model_name.human) %></h2>
 
@@ -192,5 +115,6 @@
 <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
 <%= link_to t('devise.shared.links.back'), :back %>
+
 
 
