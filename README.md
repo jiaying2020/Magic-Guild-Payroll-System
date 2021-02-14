@@ -5,3 +5,5 @@
 ![](https://i.imgur.com/h2yDft2.png)
 2020/02/11 更新 登入畫面
 ![](https://i.imgur.com/K8AOneb.png)
+2020/02/14 更新個人資料編輯頁
+![](https://i.imgur.com/n5RTYn3.jpg)
