@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
+gem 'carrierwave', '~> 2.1', '>= 2.1.1'
 
 group :production do
  gem 'pg', '~> 1.2', '>= 1.2.3'

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   before_create :build_number
 
+
   enum role: { '公會幹部': 0, '資深魔法師': 1, '新手村學徒': 2 }
   
   
